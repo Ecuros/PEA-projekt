@@ -1,2 +1,6 @@
-﻿  Creator.cpp
+﻿  DynamicProgramming.cpp
+  Pea_etap0.cpp
+c:\users\ecuros\source\repos\pea_etap0\pea_etap0.cpp(54): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+c:\users\ecuros\source\repos\pea_etap0\pea_etap0.cpp(67): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+  Generowanie kodu...
   Pea_etap0.vcxproj -> C:\Users\Ecuros\source\repos\Pea_etap0\x64\Debug\Pea_etap0.exe

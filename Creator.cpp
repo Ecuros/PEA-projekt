@@ -55,13 +55,13 @@ vector<vector<int>> Creator::readFile(std::string name)
 	return table;
 
 }
-void Creator::displayArray(vector<vector<int>> wektor)
+void Creator::displayArray(vector<vector<int>> array)
 {
-	for (int i = 0; i < wektor.size() - 1; i++)
+	for (int i = 0; i < array.size() - 1; i++)
 	{
-		for (int j = 0; j < wektor.size() - 1; j++)
+		for (int j = 0; j < array.size() - 1; j++)
 		{
-			cout << setw(3) << wektor[i][j] << "  ";
+			cout << setw(3) << array[i][j] << "  ";
 		}
 		cout << endl;
 	}
@@ -99,20 +99,22 @@ vector<int> Creator::inputPermutation(int size)
 	return permutation;
 }
 
-void Creator::calculateRoad(vector<int> permutation, vector<vector<int>> table)
+int Creator::calculateRoad(vector<int> permutation, vector<vector<int>> table)
 {
 	int nextCity = 0;
 	int road = 0;
-	for (int i = 0; i < permutation.size(); i++)
+	
+	permutation.insert(permutation.begin(), 0);
+	int firstCity = 0;
+	for (int i = 0; i < permutation.size()-1; i++)
 	{
-		if (nextCity >= permutation.size() - 1)
-		{
-			nextCity = 0;
-		}
-		else nextCity = permutation[i + 1];
+		nextCity = permutation[i + 1];
 		road += table[permutation[i]][nextCity];
 
 	}
-	cout << "Total road: " << road << endl;
+	road += table[nextCity][firstCity];
+	permutation.erase(permutation.begin());
+	
+	return road;
 }
 

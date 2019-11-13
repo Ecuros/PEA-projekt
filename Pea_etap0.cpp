@@ -6,6 +6,8 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
+#include "BF.h"
+#include "DynamicProgramming.h"
 
 using namespace std;
 int main()
@@ -13,7 +15,11 @@ int main()
 	vector<vector<int>> table;
 	vector<int>inOrder;
 	vector<int>permutation;
+	vector<int> cities;
+	DynamicProgramming * dp;
 	Creator creator;
+	BF bf;
+	
 	int choice;
 	string name;
 	
@@ -23,12 +29,13 @@ int main()
 	{
 		
 		cout << endl <<" 1: Read values from file" << endl;
-
 		cout << " 2: Display array" << endl; 
 		cout << " 3: Input permutation" << endl;
 		cout << " 4: Calculate road in order" << endl;
 		cout << " 5: Calculate road with choosen permutation" << endl;
-		cout << " 6: Exit" << endl;
+		cout << " 6: Calculate with Brute Force" << endl;
+		cout << " 7: Dynamic Programming" << endl;
+		cout << " 8: Exit" << endl;
 		cin >> choice;
 		switch (choice)
 		{
@@ -53,7 +60,15 @@ int main()
 			break;
 		case 5:
 			creator.calculateRoad(permutation, table);
-		case 6: exit = true;
+			break;
+		case 6:
+			cout << bf.calculateRoad(table, table.size());
+			break;
+		case 7: 
+			dp = new DynamicProgramming(table);
+			dp ->countBestPath(table.size());
+			break;
+		case 8: exit = true;
 		}
 	}
 

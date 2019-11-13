@@ -17,7 +17,8 @@ public:
 	vector<vector<int>> readFile(std::string name);
 	void displayArray(vector<vector<int>> wektor);
 	vector<int> inputPermutation(int size);
-	void calculateRoad(vector<int> permutation, vector<vector<int>>);
+	int calculateRoad(vector<int> permutation, vector<vector<int>>);
+	vector<vector<int>> table;
 	
 
 private:
