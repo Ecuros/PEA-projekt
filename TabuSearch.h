@@ -5,7 +5,7 @@ class TabuSearch
 {
 public:
 	TabuSearch(int size);
-	void calculateRoad(vector<int> &initialSolution, vector<vector<bool>> &exchangesMatrix, vector<vector<int>> &roadsMatrix);
+	void calculateRoad( vector<vector<bool>> &exchangesMatrix, vector<vector<int>> &roadsMatrix);
 	~TabuSearch();
 
 private: 
