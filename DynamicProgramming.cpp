@@ -2,6 +2,7 @@
 #include "DynamicProgramming.h"
 #include <iostream>
 #include "Creator.h"
+#include <ctime>
 
 using namespace std;
 DynamicProgramming::DynamicProgramming( vector<vector<int>> table )
@@ -17,27 +18,37 @@ DynamicProgramming::~DynamicProgramming()
 
 void DynamicProgramming::countBestPath(int size)
 {
-	//cout << path;
+	//float average = 0;
 	vector <int> cities;
 	for (int i = 0; i < size; i++)
 	{
 		cities.push_back(i);
 	}
-	result = solve(cities[0], cities);
-	cout << result << endl;
-	//cout << path;
-	for (int i = 0; i < path.size(); i++)
+	for (int i = 0; i < 10; i++)
 	{
-		cout << path[i];
+		//clock_t begin = clock();
+
+		result = solve(cities[0], cities);
+		//clock_t end = clock();
+		//average += end - begin / CLOCKS_PER_SEC;
 	}
+	
+	//for (int i = 0; i < times.size(); i++)
+	//{
+	//	cout << times[i] << " ";
+		//average += times[i];
+	//}
+	//average = average / 10;
+	cout << result << endl;
+	//cout << "time: " << average;
+	
 }
 int DynamicProgramming::solve(int city, vector <int> remaining )
 {
 	vector<int> road;
 	vector<int> newRemaining;
 	vector<int> costs;
-	//vector <int> path;
-	int which_road =0;
+
 
 	for (int j = 0; j < remaining.size(); j++)
 		if (remaining[j] != city)
@@ -61,7 +72,6 @@ int DynamicProgramming::solve(int city, vector <int> remaining )
 		if (min > costs[i])
 		{
 			min = costs[i];
-			cout << i;
 		}
 	}
 	return min;

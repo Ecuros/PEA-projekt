@@ -17,5 +17,6 @@ public:
 
 	int calculateRoad(vector<vector<int>> table, int size);
 	vector <int> nextPermutation(vector<int>permutation);
+	vector <double> times;
 };
 

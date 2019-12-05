@@ -8,10 +8,12 @@
 #include <iomanip>
 #include "BF.h"
 #include "DynamicProgramming.h"
+#include "TabuSearch.h"
 
 using namespace std;
 int main()
 {
+	
 	vector<vector<int>> table;
 	vector<int>inOrder;
 	vector<int>permutation;
@@ -19,7 +21,7 @@ int main()
 	DynamicProgramming * dp;
 	Creator creator;
 	BF bf;
-	
+	TabuSearch tabu(10);
 	int choice;
 	string name;
 	
@@ -35,7 +37,7 @@ int main()
 		cout << " 5: Calculate road with choosen permutation" << endl;
 		cout << " 6: Calculate with Brute Force" << endl;
 		cout << " 7: Dynamic Programming" << endl;
-		cout << " 8: Exit" << endl;
+		cout << " 0: Exit" << endl;
 		cin >> choice;
 		switch (choice)
 		{
@@ -68,7 +70,11 @@ int main()
 			dp = new DynamicProgramming(table);
 			dp ->countBestPath(table.size());
 			break;
-		case 8: exit = true;
+		case 8:
+			
+			tabu.calculateRoad();
+			break;
+		case 0: exit = true;
 		}
 	}
 

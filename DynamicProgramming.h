@@ -14,6 +14,7 @@ public:
 	void countBestPath(int size);
 	int result;
 	vector<int> path;
+	vector<double> times ;
 	
 };
 

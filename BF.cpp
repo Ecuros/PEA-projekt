@@ -34,15 +34,30 @@ int BF::calculateRoad(vector<vector<int>> table, int size)
 	
 	while (!lastPermutation )
 	{
-		permutation = nextPermutation(permutation);
-		currentRoad = creator.calculateRoad(permutation, table);
-		if ( currentRoad< bestRoad)
+		
+		for (int i = 0; i < 10; i++)
 		{
-			bestRoad = currentRoad;	
-			bestPermutation = permutation;
-		}
+			clock_t begin = clock();
+			permutation = nextPermutation(permutation);
+			currentRoad = creator.calculateRoad(permutation, table);
+			if (currentRoad < bestRoad)
+			{
+				bestRoad = currentRoad;
+				bestPermutation = permutation;
+			}
+			clock_t end = clock();
+			times.push_back((float)end - begin / CLOCKS_PER_SEC);
+		}	
 		
 	}
+	float average = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		cout << times[i] << " ";
+		average += times[i];
+	}
+	
+	cout << "time: " << (float)average;
 	for (int i = 0; i < permutation.size(); i++)
 	{
 		cout << bestPermutation[i] << " ";
