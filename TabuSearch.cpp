@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm> 
-#include<time.h>
+#include <time.h>
 #include "Creator.h"
 using namespace std;
 Creator creator;
