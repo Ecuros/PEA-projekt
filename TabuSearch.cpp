@@ -87,9 +87,8 @@ int TabuSearch::find(vector <int> &vector, int number)
 	return NULL;
 }
 
-void TabuSearch::calculateRoad( vector<vector<bool>> &exchangesMatrix, vector<vector<int>> &roadsMatrix)
+void TabuSearch::calculateRoad(vector<int> &initialSolution, vector<vector<bool>> &exchangesMatrix, vector<vector<int>> &roadsMatrix)
 {
-	createInitialSolution(size, initialSolution);
 	int a, b;
 	
 	for (int i = 0; i < 3; i++)
