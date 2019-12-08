@@ -24,7 +24,7 @@ int main()
 	TabuSearch tabu;
 	int choice;
 	string name;
-	table = creator.readFile("data11.txt");
+	table = creator.readFile("data17.txt");
 	
 	bool exit = false;
 

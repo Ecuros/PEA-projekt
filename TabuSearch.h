@@ -18,8 +18,6 @@ private:
 	
 	int find(vector<int> &vector, int number);
 
-	void kupa(int size);
-
 	void decrementMatrix(vector<vector<int>>& exchangesMatrix);	
 
 };

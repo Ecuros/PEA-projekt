@@ -22,33 +22,25 @@ Creator::~Creator()
 
 vector<vector<int>> Creator::readFile(std::string name)
 {
-	fstream file;
+	ifstream fileStream;
 	string line;
 	string temp;
 	stringstream ss;
 	int problemSize;
 	int found;
 	char delim = ' ';
-	file.open(name);
-	getline(file, line); // Get first line.
-	getline(file, line); // Get second line.
+	fileStream.open(name);
+	getline(fileStream, line); // Get first line.
+	getline(fileStream, line); // Get second line.
 	problemSize = stoi(line);
 
 	vector<vector<int>> table(problemSize, vector<int>(problemSize, 0));
 
-	if (file.is_open())
+	if (fileStream.is_open())
 	{
-		for (int i = 0; i < problemSize; i++)
-		{
-			getline(file, line);
-			ss << line;
-
-			for (int j = 0; j < problemSize; j++)
-			{
-				ss >> temp;
-				stringstream(temp) >> found;
-				temp = "";
-				table[i][j] = found;
+		for (int i = 0; i < problemSize; i++) {
+			for (int j = 0; j < problemSize; j++) {
+				fileStream >> table[i][j];
 			}
 		}
 	}
