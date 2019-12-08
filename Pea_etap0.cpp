@@ -21,9 +21,10 @@ int main()
 	DynamicProgramming * dp;
 	Creator creator;
 	BF bf;
-	TabuSearch tabu(10);
+	TabuSearch tabu;
 	int choice;
 	string name;
+	table = creator.readFile("data12.txt");
 	
 	bool exit = false;
 
@@ -37,6 +38,7 @@ int main()
 		cout << " 5: Calculate road with choosen permutation" << endl;
 		cout << " 6: Calculate with Brute Force" << endl;
 		cout << " 7: Dynamic Programming" << endl;
+		cout << " 8: Tabu Search" << endl;
 		cout << " 0: Exit" << endl;
 		cin >> choice;
 		switch (choice)
@@ -71,8 +73,8 @@ int main()
 			dp ->countBestPath(table.size());
 			break;
 		case 8:
-			
-			tabu.calculateRoad();
+			tabu.calculateRoad(table.size(), table);
+			//tabu.calculateRoad();
 			break;
 		case 0: exit = true;
 		}
