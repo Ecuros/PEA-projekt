@@ -24,7 +24,7 @@ int main()
 	TabuSearch tabu;
 	int choice;
 	string name;
-	table = creator.readFile("data12.txt");
+	table = creator.readFile("data11.txt");
 	
 	bool exit = false;
 
@@ -74,7 +74,7 @@ int main()
 			break;
 		case 8:
 			tabu.calculateRoad(table.size(), table);
-			//tabu.calculateRoad();
+			
 			break;
 		case 0: exit = true;
 		}

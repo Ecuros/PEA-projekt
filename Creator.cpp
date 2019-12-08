@@ -104,8 +104,8 @@ int Creator::calculateRoad(vector<int> permutation, vector<vector<int>> table)
 	int nextCity = 0;
 	int road = 0;
 	
-	permutation.insert(permutation.begin(), 0);
-	int firstCity = 0;
+	//permutation.insert(permutation.begin(), 0);
+	int firstCity = permutation[0];
 	for (int i = 0; i < permutation.size()-1; i++)
 	{
 		nextCity = permutation[i + 1];
@@ -113,7 +113,7 @@ int Creator::calculateRoad(vector<int> permutation, vector<vector<int>> table)
 
 	}
 	road += table[nextCity][firstCity];
-	permutation.erase(permutation.begin());
+	//permutation.erase(permutation.begin());
 	
 	return road;
 }
