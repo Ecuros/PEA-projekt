@@ -1,3 +1,0 @@
-﻿  TabuSearch.cpp
-C:\Users\Ecuros\Documents\GitHub\Pea_etap0\TabuSearch.cpp(26,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  Pea_etap0.vcxproj -> C:\Users\Ecuros\Documents\GitHub\Pea_etap0\x64\Debug\Pea_etap0.exe

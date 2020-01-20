@@ -9,22 +9,29 @@
 #include "BF.h"
 #include "DynamicProgramming.h"
 #include "TabuSearch.h"
+#include "GeneticAlgorithm.h"
 
 using namespace std;
 int main()
 {
-	
+	Creator creator;
 	vector<vector<int>> table;
+	table = creator.readFile("data34.txt");
+	
 	vector<int>inOrder;
 	vector<int>permutation;
 	vector<int> cities;
 	DynamicProgramming * dp;
-	Creator creator;
+	
+	GeneticAlgorithm GA;
+	GA.run(1500, table.size()-1, table,120, 0.5,2); // ( generations number, size of chromosome, population size, probability, type of mutation)
+	
+	
 	BF bf;
 	TabuSearch tabu;
 	int choice;
 	string name;
-	table = creator.readFile("data17.txt");
+	
 	
 	bool exit = false;
 
