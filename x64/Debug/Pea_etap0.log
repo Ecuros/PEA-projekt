@@ -1,7 +1,0 @@
-﻿  Pea_etap0.cpp
-c:\users\ecuros\source\repos\pea_etap0\pea_etap0.cpp(27): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
-c:\users\ecuros\source\repos\pea_etap0\pea_etap0.cpp(63): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
-c:\users\ecuros\source\repos\pea_etap0\pea_etap0.cpp(76): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
-c:\users\ecuros\source\repos\pea_etap0\pea_etap0.cpp(80): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
-c:\users\ecuros\source\repos\pea_etap0\pea_etap0.cpp(83): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
-  Pea_etap0.vcxproj -> C:\Users\Ecuros\source\repos\Pea_etap0\x64\Debug\Pea_etap0.exe

@@ -9,7 +9,7 @@ using namespace std;
 Creator creator;
 TabuSearch::TabuSearch()
 {
-	//kupa(10);
+
 	
 }
 TabuSearch::~TabuSearch()
@@ -96,9 +96,9 @@ void TabuSearch::calculateRoad(int size, vector<vector<int>> &roadsMatrix)
 	}
 	cout << endl;
 	//dla small k=220, kadencja 35
-	for (int upodobamisietu = 0; upodobamisietu < 5; upodobamisietu++) {
+	for (int u = 0; u < 5; u++) {
 		vector<int> initialSolution = createInitialSolution(size);
-		for (int k = 0; k < 200; k++)
+		for (int k = 0; k < 400; k++)
 		{
 			i = 0;
 			decrementMatrix(exchangesMatrix);
@@ -144,8 +144,8 @@ void TabuSearch::calculateRoad(int size, vector<vector<int>> &roadsMatrix)
 			}
 
 			initialSolution = bestNeighbourPath;
-			exchangesMatrix[swappedA][swappedB] += 25;
-			exchangesMatrix[swappedB][swappedA] += 25;
+			exchangesMatrix[swappedA][swappedB] += 30;
+			exchangesMatrix[swappedB][swappedA] += 30;
 			if (counter > 50)
 			{
 				initialSolution = createInitialSolution(size);
